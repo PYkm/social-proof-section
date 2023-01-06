@@ -1,0 +1,243 @@
+:root {
+  --default-font: 400 1em/1.5 'League Spartan', 'Verdana', sans-serif;
+  --h1-rating-font-color: hsl(300, 43%, 22%);
+  --intro-description-font-color: hsl(303, 10%, 53%);
+  --buyer-type-font-color: hsl(333, 80%, 67%);
+  --rating-card-bg-color: hsl(300, 24%, 96%);
+  --comment-card-bg-color: hsl(300, 43%, 22%);
+  --comment-card-main-font-color: hsl(0, 0%, 100%);
+  --comment-card-emphsis-font-color: hsl(333, 80%, 67%);
+  --bg-pattern-bottom-desktop: no-repeat right bottom / auto auto url(../images/bg-pattern-bottom-desktop.svg);
+  --bg-pattern-top-desktop: no-repeat left top / auto auto url(../images/bg-pattern-top-desktop.svg);
+  --bg-pattern-bottom-mobile: no-repeat right bottom / 100% auto url(../images/bg-pattern-bottom-mobile.svg);
+  --bg-pattern-top-mobile: no-repeat left top / auto auto url(../images/bg-pattern-top-mobile.svg);
+}
+
+/* Shared zone */
+.comment,
+.rating {
+  border-radius: 0.5em;
+}
+
+body,
+main,
+.info,
+.rating,
+.ratings,
+.comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main,
+.info {
+  gap: 3em;
+}
+
+.comments,
+.ratings {
+  gap: 1em;
+}
+
+.rating > p,
+h2 {
+  font-weight: 700;
+}
+
+/* Specific zone */
+html {
+  font-size: 1em;
+}
+
+body {
+  background: var(--bg-pattern-top-mobile), var(--bg-pattern-bottom-mobile);
+  color: var(--h1-rating-font-color);
+  font: var(--default-font);
+  text-align: center;
+  min-height: 100vh;
+}
+
+main {
+  margin: 2em auto;
+  width: 86%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.intro > p {
+  color: var(--intro-description-font-color);
+  font-weight: 500;
+  margin-top: 1em;
+}
+
+.rating {
+  align-items: center;
+  background: var(--rating-card-bg-color);
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+
+.rating::before {
+  content: '';
+  background: space url(../images/icon-star.svg);
+  height: 1em;
+  display: block;
+  width: 6.3em;
+  margin: 0.5em 0 0.25em;
+}
+
+.comments {
+  text-align: left;
+}
+
+.comment {
+  background: var(--comment-card-bg-color);
+  color: var(--comment-card-main-font-color);
+  padding: 2.4em 2em 1.6em;
+}
+
+figcaption {
+  align-items: center;
+  display: flex;
+  gap: 1.2em;
+}
+
+figcaption::before {
+  border-radius: 170893px;
+  content: ' ';
+  display: block;
+  height: 2.6em;
+  width: 2.6em;
+}
+
+.anne::before {
+  background: center / contain no-repeat url(../images/image-anne.jpg);
+}
+
+.colton::before {
+  background: center / contain no-repeat url(../images/image-colton.jpg);
+}
+
+.irene::before {
+  background: center / contain no-repeat url(../images/image-irene.jpg);
+}
+
+figcaption p {
+  color: var(--comment-card-emphsis-font-color);
+}
+
+h2 {
+  line-height: 1;
+}
+
+blockquote {
+  margin-top: 1.5em;
+}
+
+blockquote > p::after {
+  content: ' "';
+}
+blockquote > p::before {
+  content: '" ';
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* large screen and middle screen shared zone */
+@media (min-width: 55em) {
+  body {
+    background: var(--bg-pattern-top-desktop), var(--bg-pattern-bottom-desktop);
+    text-align: left;
+  }
+
+  main {
+    gap: 4.5em;
+    max-width: 73.75em;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  .info,
+  .rating,
+  .comments {
+    flex-direction: row;
+  }
+
+  .intro {
+    flex: 2.5 1 0;
+  }
+
+  .ratings {
+    flex: 3.5 1 0;
+  }
+
+  .rating {
+    padding: 1em 0;
+    min-width: 25em;
+    width: 74%;
+  }
+
+  .rating::before {
+    margin: auto 2em;
+  }
+
+  .comments {
+    gap: 1.4em;
+    min-height: 16em;
+  }
+
+  .rating:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  .rating:nth-child(2) {
+    align-self: center;
+  }
+
+  .rating:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+/* large screen specific zone */
+@media (min-width: 83em) {
+  .info {
+    gap: 12em;
+  }
+  .comment:nth-child(1) {
+    align-self: flex-start;
+  }
+  .comment:nth-child(2) {
+    align-self: center;
+  }
+  .comment:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+/* middle screen specific zone */
+@media (max-width: 83em) {
+  .intro {
+    flex: 3.5 1 0;
+  }
+
+  .comment {
+    align-self: stretch;
+    flex: 1 1 0;
+  }
+}
