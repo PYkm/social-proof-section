@@ -22,7 +22,6 @@
 body,
 main,
 .info,
-.rating,
 .ratings,
 .comments {
   display: flex;
@@ -78,6 +77,8 @@ h1 {
 .rating {
   align-items: center;
   background: var(--rating-card-bg-color);
+  display: flex;
+  flex-direction: column;
   gap: 0.5em;
   padding: 0.5em 0;
 }
@@ -156,7 +157,7 @@ blockquote > p::before {
 }
 
 /* large screen and middle screen shared zone */
-@media (min-width: 55em) {
+@media (min-width: 56em) {
   body {
     background: var(--bg-pattern-top-desktop), var(--bg-pattern-bottom-desktop);
     text-align: left;
@@ -188,7 +189,7 @@ blockquote > p::before {
 
   .rating {
     padding: 1em 0;
-    min-width: 25em;
+    min-width: 26em;
     width: 74%;
   }
 
